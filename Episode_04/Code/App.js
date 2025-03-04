@@ -1,65 +1,89 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { FaUserCircle } from "react-icons/fa"; // For user icon
 
-const ReacElementHeader = React.createElement("h1", { className: "title" }, [
-	"Header 1 React.createElement",
-	React.createElement("h2", { className: "title" }, [
-		"Header 2 React.createElement",
-		React.createElement(
-			"h3",
-			{ className: "title" },
-			"Header 3 React.createElement",
-		),
-	]),
-]);
+/* Header
+	- Logo 
+	- Nav Menu
+		- Home
+		- About Us
+		- Contact Us
+		- Cart
+   Body
+    - search
+	- restaurant container 
+	- restaruant card
+   Footer
+	
+*/
 
-const HeaderComponent = (tabIndex) => (
-	<h1 id="heading" className="title" tabIndex={tabIndex}>
-		Header 1 using Functional Component :)
-		<h2 id="heading2" className="title" tabIndex={tabIndex}>
-			Header 2 using Functional Component :)
-			<h3 id="heading3" className="title" tabIndex={tabIndex}>
-				Header 3 using Functional Component :)
-			</h3>
-		</h2>
-	</h1>
-);
-
-const ProperHeaderComponent = () => {
+const Header = () => {
 	return (
-		<header className="header">
-			{/* Logo */}
-			<div className="text-2xl font-bold">🌟 MyLogo</div>
-
-			{/* Search Bar */}
-			<div className="flex-grow mx-4">
-				<input type="text" placeholder="Search..." className="search" />
-			</div>
-
-			{/* User Icon */}
-			<div className="text-3xl">
-				<FaUserCircle />
-			</div>
-		</header>
+		<div className="header">
+			<img
+				className="logo"
+				src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_260/portal/m/seo/Logos/Swiggy/Swiggy%20logo-2.png"
+			/>
+			<ul>
+				<li>HOME</li>
+				<li>ABOUT US</li>
+				<li>CONTACT US</li>
+				<li>CART</li>
+			</ul>
+		</div>
 	);
 };
 
-const ReactJSXComponent = (
-	<>
-		<ProperHeaderComponent />
-		<h1 className="title" tabIndex={5}>
-			Header 1 using JSX :)
-			<h2 className="title" tabIndex={5}>
-				Header 2 using JSX :)
-				<h3 className="title" tabIndex={5}>
-					Header 3 using JSX :)
-				</h3>
-			</h2>
-		</h1>
-		<HeaderComponent tabIndex={5} />
-	</>
+const ResCard = () => {
+	return (
+		<div className="res-card">
+			<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/9/18/11621595-920c-41ed-982e-8ce0c0017cd7_23681.jpg" />
+			<div>ITEMS AT ₹139</div>
+			<div>McDonald's</div>
+			<div>4.4 • 35-40 mins</div>
+			<div>Burgers, Beverages, Cafe, Desserts</div>
+			<div>Indiranagar</div>
+		</div>
+	);
+};
+
+const ResContainer = () => {
+	return (
+		<div className="res-container">
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+			<ResCard />
+		</div>
+	);
+};
+
+const Body = (
+	<div className="body">
+		<Header />
+		<div className="search-container">
+			<input className="search" placeholder="Search......." />
+		</div>
+		<ResContainer />
+	</div>
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render([ReactJSXComponent, ReacElementHeader]);
+root.render(Body);
