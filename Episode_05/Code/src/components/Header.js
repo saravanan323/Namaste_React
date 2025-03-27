@@ -1,10 +1,9 @@
+import {LOGO_URL} from "../utils/Constants";
+
 const Header = () => {
   return (
     <div className="header">
-      <img
-        className="logo"
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_260/portal/m/seo/Logos/Swiggy/Swiggy%20logo-2.png"
-      />
+      <img className="logo" src={LOGO_URL} />
       <ul>
         <li>HOME</li>
         <li>ABOUT US</li>
