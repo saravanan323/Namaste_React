@@ -14,13 +14,12 @@ const RestaurantCard = (props) => {
 
   return (
     <div className="res-card">
-      <img src={CDN_URL + cloudinaryImageId} height="150px" width="200px"/>
-      <h3>{costForTwo}</h3>
-      <h4>{name}</h4>
-      <h4>{avgRatingString}</h4>
-      <h4>{sla.slaString}</h4>
-      <div>{cuisines.join(", ")}</div>
-      <div>{areaName}</div>
+      <img src={CDN_URL + cloudinaryImageId} />
+      <div className="res-card-details">
+        <h3>{costForTwo}</h3>
+        <h4>{name}<br/>{avgRatingString}<br/>{sla.slaString}</h4>
+        <p>{cuisines.join(", ")}<br/>{areaName}</p>
+      </div>
     </div>
   );
 };
