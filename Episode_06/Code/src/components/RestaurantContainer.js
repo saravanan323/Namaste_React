@@ -28,10 +28,8 @@ const RestaurentContainer = (props) => {
     setList(filteredList);
   }
 
-  if (list.length === 0) return <Shimmer/>; // Handle case when list is not yet populated
-
-  return (
-
+  // Handle case when list is not yet populated
+  return list.length === 0 ? (<Shimmer />) : ( //Condtional rendering
     <div className="res-container">
       {list.map((e) => (
         <RestaurantCard key={e.info.id} resData={e} />
