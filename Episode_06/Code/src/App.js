@@ -5,10 +5,11 @@ import Header from "./components/Header";
 
 const AppLayout = () => (
   <>
-   <Header/>
-   <Body/>
+    <Header />
+    <Body />
   </>
 );
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AppLayout />);

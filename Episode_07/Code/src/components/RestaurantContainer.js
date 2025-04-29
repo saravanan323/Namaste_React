@@ -20,7 +20,7 @@ const RestaurentContainer = (props) => {
   }, []);
 
   const fetchData = async () => {
-    const sUrl = "http://localhost:8080/swiggy"; //"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9966024&lng=77.6687231"
+    const sUrl = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9966024&lng=77.6687231";//"http://localhost:8080/swiggy"; //"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9966024&lng=77.6687231"
     const data = await fetch(sUrl);
     const json = await data.json();
     const oFilteredList = json.data.cards.map(e => e.card.card?.gridElements?.infoWithStyle?.restaurants).filter(e => e)[0];
